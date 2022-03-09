@@ -257,7 +257,7 @@ async def shop(ctx: lightbulb.Context) -> None:
         for item_id, item_name, item_price, item_role in every_page:
             role_object = guild_object.get_role(item_role).mention if guild_object.get_role(item_role).id in guild_object.get_roles() else "None"
             embed.add_field(name=f'• {item_name}', value=f'> Item ID: {item_id}\n'
-                                                         f'> Price: {item_price:,} Trailblazer{"s" if item_price > 1 else ""}\n'
+                                                         f'> Price: {item_price:,} Trailmix{"s" if item_price > 1 else ""}\n'
                                                          f'> Role Reward: {role_object}')
     embed.set_thumbnail(guild_object.icon_url)
     pages = math.ceil(len(item_list) / n)
