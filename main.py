@@ -14,7 +14,7 @@ with open("authentication.yaml", "r", encoding="utf8") as stream:
     yaml_data = yaml.safe_load(stream)
 
 intents = hikari.Intents.ALL
-test_guilds = (660135595250810881, 948311226159624254)
+test_guilds = (929046281467363418)
 
 async def determine_prefix(bot, message):
     try:
