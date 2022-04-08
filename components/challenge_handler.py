@@ -306,7 +306,7 @@ class Challenge:
 
 def account_create(member: hikari.Member):
     Database.execute(' REPLACE INTO userProfile (user_id) VALUES (?) ', member.id)
-    challenge_list = [i for i in Database.get('SELECT challenge_id FROM challengeProfile ')]
+    challenge_list = [i[0] for i in Database.get('SELECT challenge_id FROM challengeProfile ')]
     for id in challenge_list:
         Database.execute(' REPLACE INTO challengeTracker (user_id, challenge_id) VALUES (?, ?) ', member.id, id)
     item_list = [i for i in Database.get(' SELECT * FROM items ')]
